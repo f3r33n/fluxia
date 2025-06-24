@@ -142,7 +142,11 @@ body::after {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-
+.tool-btn {
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+  position: relative !important;
+}
   color: #fff;
   background: linear-gradient(135deg, #00feba, #5b86e5);
   border: 2px solid transparent;
