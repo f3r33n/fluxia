@@ -1,0 +1,5 @@
+title: Fluxia Blog
+description: Explore the minds behind the AI tools – blog powered by Jekyll.
+baseurl: "/fluxia"
+url: "https://f3r33n.github.io"
+theme: minima
