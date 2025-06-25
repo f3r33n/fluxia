@@ -1,5 +1,16 @@
 title: Fluxia Blog
-description: Explore the minds behind the AI tools – blog powered by Jekyll.
-baseurl: "/fluxia"
+description: >-
+  Insights, tools, and tutorials on AI productivity, Hugging Face models, and everything Fluxia.
+baseurl: "/fluxia" # Only needed if your blog is not at the root
 url: "https://f3r33n.github.io"
+
 theme: minima
+
+plugins:
+  - jekyll-feed
+
+author:
+  name: Peerzada Faizan
+  email: peerzadafayzan@outlook.com
+
+markdown: kramdown
