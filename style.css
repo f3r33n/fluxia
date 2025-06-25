@@ -1,4 +1,4 @@
-/* Fonts & Reset */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +9,14 @@ body {
   color: #fff;
   overflow-x: hidden;
   padding-bottom: 80px;
+  font-family: 'Rubik', sans-serif;
   position: relative;
 }
 body::after {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -25,82 +24,109 @@ body::after {
   pointer-events: none;
 }
 
-
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 60px 20px 40px;
-  position: relative;
+  padding: 100px 20px 60px;
 }
 
-/* Keep title as-is but higher */
 .hero-main-title {
   font-family: 'Zen Dots', cursive;
-  font-size: 3.2rem;
-  margin-bottom: 0;
-  color: #fff;
+  font-size: 4.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px #00feba, 0 0 30px #5b86e5;
+  animation: floatTitle 3s ease-in-out infinite alternate;
 }
 
-/* Fluxia highlight */
 .hero-fluxia {
-  font-size: 3.8rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5rem;
   color: #00feba;
-  animation: pulseGlow 2s infinite alternate;
+  animation: fluxiaPulse 2s ease-in-out infinite;
 }
 
-/* Move description slightly lower with distinct font */
-.hero-description {
-  margin-top: 40px; /* creates gap below heading */
+/* Description Boxes */
+.hero-description-boxes {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
-/* New font just for description */
-.hero-sub, .subtitle {
-  font-family: 'Rubik', sans-serif; /* you can switch this to Poppins, Lato, etc. */
-  max-width: 700px;
-  margin: 0 auto;
-  color: #c0ffee;
-  line-height: 1.6;
+.description-card {
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(0, 255, 200, 0.05), rgba(0, 150, 255, 0.08));
+  border: 1px solid rgba(0, 255, 200, 0.15);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 18px rgba(0, 255, 200, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.description-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.05), transparent 70%);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+.description-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.3), 0 0 60px rgba(91, 134, 229, 0.2);
+  transform: translateY(-5px) scale(1.01);
+  background: linear-gradient(145deg, rgba(0, 255, 200, 0.07), rgba(91, 134, 229, 0.1));
+  border: 1px solid rgba(0, 255, 200, 0.25);
 }
 
+/* Text Styling */
 .hero-sub {
   font-size: 1.4rem;
-  margin-bottom: 10px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  text-shadow: 0 0 6px #5b86e5;
 }
-
 .subtitle {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.15rem;
-  margin-top: 15px;
-  color: #00feba;
   background: linear-gradient(90deg, #00feba, #5b86e5, #ff6f61);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   animation: glowText 5s ease-in-out infinite alternate, textSlide 8s linear infinite;
   text-align: center;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.6;
 }
-@keyframes glowText {
+
+/* Animations */
+@keyframes floatTitle {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+@keyframes fluxiaPulse {
   0% {
-    text-shadow: 0 0 6px #00feba;
+    text-shadow: 0 0 10px #00feba;
+    transform: scale(1);
   }
   100% {
-    text-shadow: 0 0 20px #ff6f61, 0 0 30px #00feba;
+    text-shadow: 0 0 20px #00feba, 0 0 35px #5b86e5;
+    transform: scale(1.05);
   }
+}
+@keyframes glowText {
+  0% { text-shadow: 0 0 8px #00feba; }
+  100% { text-shadow: 0 0 20px #ff6f61, 0 0 30px #00feba; }
+}
+@keyframes textSlide {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
-@keyframes textSlide {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
 
 
 
