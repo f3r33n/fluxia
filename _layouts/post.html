@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | Fluxia Blog</title>
+  <link rel="stylesheet" href="/fluxia/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    h1 {
+      color: #00adb5;
+    }
+    a {
+      color: #ff5722;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .back {
+      margin-top: 2rem;
+      display: inline-block;
+      background: #00adb5;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ page.title }}</h1>
+  <p><em>Published on {{ page.date | date: "%B %d, %Y" }}</em></p>
+  <hr />
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <a href="/fluxia/blog/" class="back">← Back to Blog</a>
+</body>
+</html>
