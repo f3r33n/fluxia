@@ -497,3 +497,56 @@ body::after {
   color: #fff;
   transform: scale(1.05);
 }
+/* 🌀 Explore Fluxia 2.0 Promo */
+.fluxia1-promo {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 100px;
+  background: radial-gradient(circle at top left, #ff00ff40, #00ffee20);
+  border: 2px dashed #ff00ff;
+  text-align: center;
+  box-shadow: 0 0 30px #ff00ff50, inset 0 0 15px #00ffee60;
+  animation: glowFade 6s infinite alternate ease-in-out;
+  backdrop-filter: blur(8px);
+}
+
+.fluxia1-promo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ff00ff;
+  text-shadow: 0 0 12px #ff00ff;
+}
+
+.fluxia1-promo p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.fluxia1-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #00ffee, #ff00ff);
+  color: #000;
+  font-weight: bold;
+  border-radius: 50px;
+  text-shadow: none;
+  box-shadow: 0 0 20px #00ffee;
+  transition: all 0.3s ease;
+}
+.fluxia1-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px #ff00ff;
+}
+
+/* Glowing animation */
+@keyframes glowFade {
+  0% {
+    box-shadow: 0 0 20px #00ffee80, inset 0 0 10px #ff00ff50;
+  }
+  100% {
+    box-shadow: 0 0 40px #ff00ff80, inset 0 0 20px #00ffee50;
+  }
+}
